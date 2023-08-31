@@ -1,6 +1,10 @@
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className="flexStart footer">
+        <div className="flex flex-col gap-12 w-full">
+            <div className=""></div>
+        </div>
+    </footer>
   )
 }
 
