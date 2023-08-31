@@ -1,7 +1,16 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <nav className="flexBetween navbar">
+      <div className="flex-1 flexStart gap-10">
+        <Link href="/">
+          <Image src="/logo.svg" width={115} height={43} alt="flexibble" />
+        </Link>
+      </div>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
