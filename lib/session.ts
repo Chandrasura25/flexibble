@@ -23,4 +23,8 @@ export const authOptions: NextAuthOptions = {
     logo: "/logo.png",
     colorScheme: "light",
   },
+  callbacks: {
+    async session({ session }) {},
+    async signIn({ user }) {},
+  },
 };
