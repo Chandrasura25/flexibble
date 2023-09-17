@@ -12,27 +12,28 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
-//   jwt: {
-//     encode: async ({ secret, token }) => {},
-//     decode: async ({ secret, token }) => {
-//       const decodedToken = jsonwebtoken.verify(token, secret);
-//       return decodedToken as JWT;
-//     },
-//   },
+  //   jwt: {
+  //     encode: async ({ secret, token }) => {},
+  //     decode: async ({ secret, token }) => {
+  //       const decodedToken = jsonwebtoken.verify(token, secret);
+  //       return decodedToken as JWT;
+  //     },
+  //   },
   theme: {
     logo: "/logo.png",
     colorScheme: "light",
   },
   callbacks: {
     async session({ session }) {
-        return session;
+      return session;
     },
-    async signIn({ user } : { user: AdapterUser | User } ) {
-        try {
-            
-        } catch (error) {
-            
-        }
+    async signIn({ user }: { user: AdapterUser | User }) {
+      try {
+        return true;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
     },
   },
 };
