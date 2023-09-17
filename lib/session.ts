@@ -6,10 +6,21 @@ import jsonwebtoken from "jsonwebtoken";
 import { JWT } from "next-auth/jwt";
 
 export const authOptions: NextAuthOptions = {
-    providers: [
-        GoogleProvider({
-            clientId:'',
-            clientSecret:'',
-        }),
-    ],
+  providers: [
+    GoogleProvider({
+      clientId: "",
+      clientSecret: "",
+    }),
+  ],
+  jwt: {
+    encode: async ({ secret, token }) => {},
+    decode: async ({ secret, token }) => {
+      const decodedToken = jsonwebtoken.verify(token, secret);
+      return decodedToken as JWT;
+    },
+  },
+  theme: {
+    logo: "/logo.png",
+    colorScheme: "light",
+  },
 };
