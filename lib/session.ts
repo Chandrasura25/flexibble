@@ -24,7 +24,15 @@ export const authOptions: NextAuthOptions = {
     colorScheme: "light",
   },
   callbacks: {
-    async session({ session }) {},
-    async signIn({ user }) {},
+    async session({ session }) {
+        return session;
+    },
+    async signIn({ user } : { user: AdapterUser | User } ) {
+        try {
+            
+        } catch (error) {
+            
+        }
+    },
   },
 };
