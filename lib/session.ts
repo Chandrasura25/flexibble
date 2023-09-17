@@ -32,7 +32,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   theme: {
-    logo: "/logo.png",
+    logo: "/logo.jpg",
     colorScheme: "light",
   },
   callbacks: {
